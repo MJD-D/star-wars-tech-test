@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <h1>Star Wars Planets</h1>
     <div class="filter-container">
-      <div class="flex flex-row items-center">
+      <div class="flex flex-row items-center mb-2">
         <label for="search-input">Search by Planet or Resident Name:</label>
         <input
           class="ml-2 p-1 rounded-md text-black"
@@ -33,7 +33,7 @@
     <ul v-if="!isLoading && filteredPlanets.length > 0">
       <li class="planet" v-for="planet in filteredPlanets" :key="planet.name">
         <div class="list-item">
-          <strong>{{ planet.name }}</strong>
+          <h2 class="font-bold">{{ planet.name }}</h2>
           <br />
           <strong>Population:</strong> {{ planet.population }}
           <br />
