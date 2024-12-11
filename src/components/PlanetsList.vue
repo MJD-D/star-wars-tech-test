@@ -177,7 +177,6 @@ export default defineComponent({
               }),
             )
             pendingRequests--
-            console.log(pendingRequests)
 
             planet.residents = [...residentNames] // Replace URLs with names
           } else {
