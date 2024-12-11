@@ -234,9 +234,3 @@ export default defineComponent({
   },
 })
 </script>
-
-<style scoped>
-.error {
-  color: red;
-}
-</style>

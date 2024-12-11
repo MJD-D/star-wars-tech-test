@@ -10,6 +10,10 @@
   font-weight: normal;
 }
 
+.error {
+  color: red;
+}
+
 .filter-container {
   @apply mb-4 flex flex-col;
 }
