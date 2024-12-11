@@ -205,12 +205,15 @@ export default defineComponent({
         }, 50) // Check every 50ms
       }
     },
+
+    // Returns a a radius of between 10 and 45 depending on planet size
     getRadius(diameter: number | null): number {
       if (!diameter || diameter === 0) return 10
       return Math.min(Math.max(diameter / 300, 10), 45)
     },
     getClimateColor(climate: string): string {
       const climateMap: Record<string, string> = {
+        //TODO expand colours and make sure they pass accessability standards
         arid: '#D13C1C',
         temperate: '#229954 ',
         tropical: '#D7EA15',
@@ -219,6 +222,8 @@ export default defineComponent({
       }
       return climateMap[climate.split(',')[0].trim()] || '#DADADA'
     },
+
+    // Converts any string value to number|null to ensure that the get radius function handles the diameter value correctly as the diameter comes in string format from the API
     diameterToNumber(diameter: string | number | null): number | null {
       if (typeof diameter === 'number') return diameter
       if (typeof diameter === 'string' && diameter !== 'unknown') {
